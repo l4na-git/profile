@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.secondary-title {
+    @apply font-manrope text-3xl font-bold text-center md:text-left;
+}
+
+.tertiary-title {
+    @apply my-6 font-bold text-center md:text-left;
+}
+
+.section-paragraph {
+    @apply my-6 w-full text-left;
+}
+
+.circle {
+    @apply relative;
+}
+
+.circle::after {
+    content: "";
+    @apply absolute -left-7 translate-y-1/2	top-1/2 w-5 h-5 bg-theme rounded-full;
+}
