@@ -25,14 +25,50 @@
 <body class="font-zenkakugothic leading-7 text-blue-950">
     <!-- header -->
     <header class="py-6 fixed top-0 left-0 right-0 bg-white shadow-md z-10">
-        <div class="font-manrope container mx-auto md:flex justify-between items-center px-8 md:px-14 lg:px-24 w-full">
-            <div class="text-lg font-bold text-center">l4na.com</div>
-            <div class="space-x-12 md:flex items-center text-center">
-                <a href="#home" class="hover:text-theme transition-all duration-300">Home</a>
-                <a href="#about" class="hover:text-theme transition-all duration-300">About</a>
-                <a href="#education" class="hover:text-theme transition-all duration-300">Education</a>
-            </div>
-        </div>
+      <div class="font-manrope container mx-auto md:flex justify-between items-center px-8 md:px-14 lg:px-24 w-full relative">
+        <div class="text-lg font-bold text-center">l4na.com</div>
+        <!-- ハンバーガーアイコン（モバイルのみ表示） -->
+        <button id="menu-toggle" type="button" aria-label="メニューを開く" class="md:hidden absolute right-8 top-1/2 -translate-y-1/2 text-2xl text-theme focus:outline-none z-50">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <!-- メニュー本体 -->
+        <nav id="main-menu"
+          class="fixed top-0 left-0 w-full h-full bg-white/95 backdrop-blur-md flex-col justify-center items-center hidden transition-all duration-300 z-40 px-8 pt-32 pb-16
+          md:static md:flex md:bg-transparent md:backdrop-blur-0 md:h-auto md:w-auto md:p-0 md:z-auto md:justify-end md:items-center">
+          <button id="menu-close" type="button" aria-label="メニューを閉じる" class="md:hidden absolute right-8 top-8 text-3xl text-theme focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="flex flex-col space-y-8 w-full max-w-xs mx-auto items-center md:flex-row md:space-y-0 md:space-x-12 md:w-auto md:max-w-none md:mx-0">
+            <a href="#home" class="hover:text-theme transition-all duration-300 text-2xl md:text-base">Home</a>
+            <a href="#about" class="hover:text-theme transition-all duration-300 text-2xl md:text-base">About</a>
+            <a href="#education" class="hover:text-theme transition-all duration-300 text-2xl md:text-base">Education</a>
+          </div>
+        </nav>
+      </div>
+      <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('main-menu');
+        const menuClose = document.getElementById('menu-close');
+        // メニューを開く
+        menuToggle.addEventListener('click', () => {
+          menu.classList.remove('hidden');
+          menuToggle.classList.add('hidden');
+        });
+        // メニューを閉じる
+        menuClose.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          menuToggle.classList.remove('hidden');
+        });
+        // モバイル時、リンククリックでメニューを閉じる
+        menu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            if(window.innerWidth < 768) {
+              menu.classList.add('hidden');
+              menuToggle.classList.remove('hidden');
+            }
+          });
+        });
+      </script>
     </header>
 
     <!-- home -->
