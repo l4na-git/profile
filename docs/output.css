@@ -799,6 +799,14 @@ video {
   background-image: linear-gradient(#2ca8e115 3px,transparent 3px),linear-gradient(to right,#2ca8e115 3px,#f2f9fd 3px);
 }
 
+.bg-\[linear-gradient\(\#2ca9e115_3px\2c transparent_3px\)\2c linear-gradient\(to_right\2c \#2ca8e115_3px\2c \#f2f9fd_3px\)\] {
+  background-image: linear-gradient(#2ca9e115 3px,transparent 3px),linear-gradient(to right,#2ca8e115 3px,#f2f9fd 3px);
+}
+
+.bg-\[linear-gradient\(\#2ca9e115_3px\2c transparent_3px\)\2c linear-gradient\(to_right\2c \#2ca9e115_3px\2c \#f2f9fd_3px\)\] {
+  background-image: linear-gradient(#2ca9e115 3px,transparent 3px),linear-gradient(to right,#2ca9e115 3px,#f2f9fd 3px);
+}
+
 .bg-\[length\:35px_35px\] {
   background-size: 35px 35px;
 }
